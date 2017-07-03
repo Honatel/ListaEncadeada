@@ -52,14 +52,28 @@ public class No {
 	}
 	
     /* Insere um No após esse no. */// inserre setProxima(Celula proxima) 
-    public boolean insertAfter(No proxima) {
+    public boolean insertAfter(No Referencia) {
+    	
+    	ListaEncadeada lista = new ListaEncadeada();
+    	No nova = new No(Referencia.proxima, "8");
+    	
+    	nova.setAnterior(Referencia);
+    	Referencia.proxima = nova;
+    	lista.setUltima(nova);
 		return false;
 	}
 	
 	
     /* Insere um No antes desse no. */ //setAnterior(Celula anterior)
-    public boolean insertBefore(No anterior) {
-		return false;
+    public boolean insertBefore(No Referencia) {
+    	//ListaEncadeada lista = new ListaEncadeada();
+    	No nova = new No(Referencia, "7");
+  
+    	nova.setAnterior(Referencia.anterior);
+    	Referencia.anterior.proxima= nova; 
+	    Referencia.anterior = nova;
+      
+		return true;
 	}
 	
     /* Remove o no */
