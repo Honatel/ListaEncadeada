@@ -48,30 +48,30 @@ public class No {
 		
     /* Retorna o No anterior. */
     public No previous() {
-		return null;
+		return this.anterior;
 	}
 	
     /* Insere um No após esse no. */// inserre setProxima(Celula proxima) 
-    public boolean insertAfter(No Referencia) {
+    public boolean insertAfter(No nova) {
     	
-    	ListaEncadeada lista = new ListaEncadeada();
-    	No nova = new No(Referencia.proxima, "8");
     	
-    	nova.setAnterior(Referencia);
-    	Referencia.proxima = nova;
-    	lista.setUltima(nova);
-		return false;
+    	nova.setAnterior(nova.proxima);
+    	nova.proxima = nova.proxima.proxima;
+    	nova.proxima.anterior = nova;
+    	nova.anterior.proxima = nova;
+    	 
+    	
+    	//lista.setUltima(nova);
+		return true;
 	}
 	
 	
     /* Insere um No antes desse no. */ //setAnterior(Celula anterior)
-    public boolean insertBefore(No Referencia) {
-    	//ListaEncadeada lista = new ListaEncadeada();
-    	No nova = new No(Referencia, "7");
-  
-    	nova.setAnterior(Referencia.anterior);
-    	Referencia.anterior.proxima= nova; 
-	    Referencia.anterior = nova;
+    public boolean insertBefore(No nova) {
+    	
+    	nova.setAnterior(nova.proxima.anterior);
+    	nova.proxima.anterior.proxima= nova; 
+	    nova.proxima.anterior = nova;
       
 		return true;
 	}

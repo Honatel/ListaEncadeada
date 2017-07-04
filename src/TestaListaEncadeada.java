@@ -23,8 +23,8 @@ public class TestaListaEncadeada {
         No iter = lista.getFirst();
         for (int i = 0; i < 3; i++)
             iter = iter.next();
-        iter.insertBefore(iter);//insere antes do 4  
-        iter.insertAfter(iter); // insere depois do 4
+        iter.insertBefore(new No(iter,"7") );//insere antes do 4  
+        iter.insertAfter(new No(iter,"8")); // insere depois do 4
         imprime(lista);
         System.out.println("Lista ao contrario:");
         iter = lista.getLast();

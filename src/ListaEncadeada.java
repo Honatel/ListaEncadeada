@@ -16,14 +16,13 @@ public class ListaEncadeada {
 
 	/* Insere o objeto no fim da lista. */
     public void append(Object elemento) {
-        if (this.totalElementos == 0) {
+        if (this.ultima == null) {
             this.addFirst(elemento);
           } else {
         	  No nova = new No(elemento);
             this.ultima.setProxima(nova);
             nova.setAnterior(this.ultima);
             this.ultima = nova;
-            
             
             this.totalElementos++;
           }
@@ -33,12 +32,12 @@ public class ListaEncadeada {
     public void addFirst(Object elemento) {
         No nova = new No(this.primeira, elemento);
         
-        if(this.totalElementos == 0){
+        if(this.ultima == null){
           this.primeira = nova;
           this.ultima = this.primeira;
         }else{
         	this.primeira.setAnterior(nova);
-        	nova.setProxima(this.primeira);
+        	//nova.setProxima(this.primeira);
         	this.primeira = nova;
         	
         }
