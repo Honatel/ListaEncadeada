@@ -3,16 +3,6 @@ public class ListaEncadeada {
 	private No primeira;
 	
 	private No ultima;
-	
-	private int totalElementos;
-
-    public int getTotalElementos() {
-		return totalElementos;
-	}
-
-	public void setTotalElementos(int totalElementos) {
-		this.totalElementos = totalElementos;
-	}
 
 	/* Insere o objeto no fim da lista. */
     public void append(Object elemento) {
@@ -23,8 +13,7 @@ public class ListaEncadeada {
             this.ultima.setProxima(nova);
             nova.setAnterior(this.ultima);
             this.ultima = nova;
-            
-            this.totalElementos++;
+           
           }
 	}
 	
@@ -37,11 +26,10 @@ public class ListaEncadeada {
           this.ultima = this.primeira;
         }else{
         	this.primeira.setAnterior(nova);
-        	//nova.setProxima(this.primeira);
         	this.primeira = nova;
         	
         }
-        this.totalElementos++;
+        
 	}
 	
     public No getPrimeira() {
