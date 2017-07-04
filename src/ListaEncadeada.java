@@ -16,7 +16,6 @@ public class ListaEncadeada {
            
           }
 	}
-	
     /* Insere o objeto no inicio da lista. */
     public void addFirst(Object elemento) {
         No nova = new No(this.primeira, elemento);
